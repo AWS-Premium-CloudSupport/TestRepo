@@ -1,1 +1,12 @@
-echo "Hello World"
+---
+name: Test Self-Hosted Runner
+on:
+  - push
+jobs:
+  build:
+    runs-on: self-hosted
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v2
+      - name: Run a one-liner script
+        run: echo "Hello from the self-hosted runner!"
